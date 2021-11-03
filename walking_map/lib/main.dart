@@ -12,20 +12,10 @@ class MapApp extends StatefulWidget {
   
   @override
   _MapAppState createState() => new _MapAppState();
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     title: 'WalkingMap',
-  //     theme: ThemeData(
-  //       primarySwatch: Colors.blue,
-  //     ),
-  //     //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-  //     home: Scaffold(appBar: AppBar(title:'',),),
-  //   );
-  // }
 }
 
 class _MapAppState extends State<MapApp>{
-  String _title = 'map_app';
+  String _title = '地図開拓';
   Widget build(BuildContext context){
     return MaterialApp(
       title:  'WalkingMap',
@@ -35,7 +25,13 @@ class _MapAppState extends State<MapApp>{
       home: Scaffold(
         appBar: AppBar(
           title: Text(_title),
-          ),
+          actions: <Widget>[
+            IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.settings),
+            )
+          ],
+        ),
         body: FlutterMap(
           options: MapOptions(
             center: LatLng(35.681, 139.767),
@@ -78,50 +74,3 @@ class _MapAppState extends State<MapApp>{
     );
   }
 }
-
-// class MyHomePage extends StatefulWidget {
-//   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-//   final String title;
-
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   int _counter = 0;
-
-//   void _incrementCounter() {
-//     setState(() {
-//       _counter++;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             const Text(
-//               'You have pushed the button this many times:',
-//             ),
-//             Text(
-//               '$_counter',
-//               style: Theme.of(context).textTheme.headline4,
-//             ),
-//           ],
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _incrementCounter,
-//         tooltip: 'Increment',
-//         child: const Icon(Icons.add),
-//       ), 
-//     );
-//   }
-// }
