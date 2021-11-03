@@ -44,7 +44,8 @@ class _MapAppState extends State<MapApp>{
           layers: [
             TileLayerOptions(
               urlTemplate: 
-                 'https://1.bp.blogspot.com/-ixn6Lst2PGA/YQs0bRVsxlI/AAAAAAABe9E/XJuLl3RnBNwMo9uHlazF9SBYoNfMJtBcwCNcBGAsYHQ/s803/eto_tora_banzai.png',
+                 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              subdomains: ['a', 'b', 'c']
             ),
             CircleLayerOptions(
               circles: [
